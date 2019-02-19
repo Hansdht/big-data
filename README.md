@@ -32,8 +32,8 @@ the format of output for map
 
 | key | value |
 | ----- | ----- |
-| title1 | timestamp outlink2 |
-| title2 | timestamp outlink2 |
+| title1 | timestamp outlink1 outlink2 ... |
+| title2 | timestamp outlink1 outlink2 ... |
 
 
 Initialization-reduce
@@ -47,8 +47,8 @@ the output of this process is
 
 | key | value |
 | ----- | ----- |
-| title1 | 1 outlink1 outlink2 |
-| title2 | 1 outlink1 outlink2 |
+| title1 | 1 outlink1 outlink2 ... |
+| title2 | 1 outlink1 outlink2 ... |
 
 
 # PageRank
