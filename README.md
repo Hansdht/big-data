@@ -1,5 +1,8 @@
 # big-data
 
+Big data coursework
+===================
+This is the coursework of bigdata in university of Glasgow, it is a 
 the main purpose of this task is to implement a methd which can calculate the pagerank for each link in records
 Our solution contains Initialization map-reduce and PageRank map-reduce. 
 The whole algorithm has several classes
@@ -11,7 +14,6 @@ For using, please type:  hadoop path/to/input/file path/to/output/file iteration
 
 Initialization
 In first step, we set the doucument as input and put out all the title and all its oultlinks. The class contains 
-
 ...
 
 
@@ -28,7 +30,11 @@ out-date record. Secondly, we remove the timestamp and repace it by 1 for pagera
 
 output of reduce is formatted in <title, 1 outlink1 outlink2 ...>
 tips:the time for user input need to be formated in standard format, otherwise the program will crash.
-
+the output of this process is 
+ key | value
+ -------- | --------- 
+title1 | 1 outlink1 outlink2
+title2 | 1 outlink1 outlink2
 
 
 
