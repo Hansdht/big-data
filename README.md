@@ -1,6 +1,6 @@
 # big-data
 
-Big data coursework
+Big data coursework 1
 ===================
 This is the coursework of bigdata in university of Glasgow, it is a 
 the main purpose of this task is to implement a methd which can calculate the pagerank for each link in records
@@ -43,7 +43,7 @@ out-date record. Secondly, we remove the timestamp and repace it by 1 for pagera
 
 output of reduce is formatted in <title, 1 outlink1 outlink2 ...>
 tips:the time for user input need to be formated in standard format, otherwise the program will crash.
-the output of this process is 
+the output format of this process has given below
 
 | key | value |
 | ----- | ----- |
@@ -82,3 +82,9 @@ the Pagerank mapreduce process need to iterated for several times to converge th
 
 
 final output:<title, pagerank score>
+the final output format has given
+
+| key | value |
+| ----- | ----- |
+| article1 | score1 |
+| article2 | score2 |
