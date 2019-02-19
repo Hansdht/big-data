@@ -31,11 +31,11 @@ out-date record. Secondly, we remove the timestamp and repace it by 1 for pagera
 output of reduce is formatted in <title, 1 outlink1 outlink2 ...>
 tips:the time for user input need to be formated in standard format, otherwise the program will crash.
 the output of this process is 
- key | value
- -------- | --------- 
-title1 | 1 outlink1 outlink2
-title2 | 1 outlink1 outlink2
 
+| key | value |
+| ----- | ----- |
+| title1 | 1 outlink1 outlink2 |
+| title2 | 1 outlink1 outlink2 |
 
 
 PageRank
