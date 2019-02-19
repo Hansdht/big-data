@@ -12,8 +12,14 @@ The whole process can be divided into three steps: Initialization, PageRank, Tra
 For using, please type:  hadoop path/to/input/file path/to/output/file iteration(times) time(In ISO8601 format) 
 
 
-Initialization
-In first step, we set the doucument as input and put out all the title and all its oultlinks. The class contains 
+# Initialization
+This step was implemented to process the get the record titles, timestamps and all the outlinks
+There are three files in this step:
+1.titleJob: contains the map-reduce to process data
+2.MyInputFormat
+3. MyRecordReader
+4. 
+In first step, we set the doucument as input 
 ...
 
 
@@ -26,8 +32,8 @@ the format of output for map
 
 | key | value |
 | ----- | ----- |
-| title1 | 1 timestamp outlink2 |
-| title2 | 1 timestamp outlink2 |
+| title1 | timestamp outlink2 |
+| title2 | timestamp outlink2 |
 
 
 Initialization-reduce
@@ -45,7 +51,7 @@ the output of this process is
 | title2 | 1 outlink1 outlink2 |
 
 
-PageRank
+# PageRank
 The class it contains are ...
 The score can be expressed to: PR=(1-damping factor)+damping factors*sum(PR/number of outlinks)
 In the pagerank step, the rank score can be calculated for each link. We also set a loop to converge the score. 
