@@ -2,8 +2,8 @@
 
 Big data coursework 1
 ===================
-This is the coursework of bigdata in university of Glasgow, it is a 
-the main purpose of this task is to implement a methd which can calculate the pagerank for each link in records
+This is the coursework of bigdata in university of Glasgow, the 
+the main purpose of this task is to implement a watered-down version of PageRank algorithm which can calculate the score for each link in records.
 Our solution contains Initialization map-reduce and PageRank map-reduce. 
 The whole algorithm has several classes
 
@@ -16,19 +16,17 @@ For using, please type:  hadoop path/to/input/file path/to/output/file iteration
 This step was implemented to process the get the record titles, timestamps and all the outlinks
 There are three files in this step:
 1.titleJob: contains the map-reduce to process data
-2.MyInputFormat
+2.MyInputFormat: change the scaning format so that the whole record can be scanned rather than a single line.
 3. MyRecordReader
-4. 
-In first step, we set the doucument as input 
+4. utils.ISO8601: transform the format for timestamp 
+In first step, we set the doucument as input
 ...
 
 
 Initialization-map
-In the mapping part, we compaire the token with the String"REVISION", then we can find the title by 
-
-tokenizer.nextToken. Secondly, the self-loop links removed for each record.
+In the mapping part, we compaire the token with the String"REVISION", then we can find the title by tokenizer.nextToken. Secondly, the self-loop links removed for each record.
 the output for mapping will be set in <title, timestamp outlink1 outlink2 ...>
-the format of output for map
+the format of output for map has shown below
 
 | key | value |
 | ----- | ----- |
@@ -37,12 +35,8 @@ the format of output for map
 
 
 Initialization-reduce
-For the reduce part, there are two parts in this part. Firstly, the timestamp will be compaired to take out the 
-
-out-date record. Secondly, we remove the timestamp and repace it by 1 for pagerank loop in PageRank step. The 
-
-output of reduce is formatted in <title, 1 outlink1 outlink2 ...>
-tips:the time for user input need to be formated in standard format, otherwise the program will crash.
+For the reduce part, there are two parts in this step. Firstly, the timestamp will be compaired to take out the out-date record. Secondly, we remove the timestamp and repace it by 1 for pagerank loop in PageRank step. The output of reduce is formatted in <title, 1 outlink1 outlink2 ...>
+tips:the time for user input need to be formated in standard format(ISO 8601), otherwise the program will crash.
 the output format of this process has given below
 
 | key | value |
@@ -88,3 +82,7 @@ the final output format has given
 | ----- | ----- |
 | article1 | score1 |
 | article2 | score2 |
+
+# existing problem and extension
+for further prospect, 
+
