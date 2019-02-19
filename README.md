@@ -22,6 +22,13 @@ In the mapping part, we compaire the token with the String"REVISION", then we ca
 
 tokenizer.nextToken. Secondly, the self-loop links removed for each record.
 the output for mapping will be set in <title, timestamp outlink1 outlink2 ...>
+the format of output for map
+
+| key | value |
+| ----- | ----- |
+| title1 | 1 timestamp outlink2 |
+| title2 | 1 timestamp outlink2 |
+
 
 Initialization-reduce
 For the reduce part, there are two parts in this part. Firstly, the timestamp will be compaired to take out the 
