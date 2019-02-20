@@ -83,10 +83,11 @@ the final output format has given
 | article1 | score1 |
 | article2 | score2 |
 
-# existing problem and extension
+# existing problem and future work
 for further prospect, there are some improvement in this method
 1.input check
 we had some errors in implementing timestamps. After checking, we found that is the format of data eg.    ....
 the format of input for users can be checked to right ISO format 
 2. Order the result
-the result is not order in alfabeta, 
+the result is not order by its score
+this algorithm can also be implemented by another 
