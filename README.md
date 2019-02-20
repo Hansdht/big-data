@@ -19,7 +19,7 @@ There are three files in this step:
 2.MyInputFormat: change the scaning format so that the whole record can be scanned rather than a single line.
 3. MyRecordReader
 4. utils.ISO8601: transform the format for timestamp 
-In first step, we set the doucument as input
+In this process, we set the doucument as input, then find all the title and its timestamp and outlinks. After that the 
 ...
 
 
