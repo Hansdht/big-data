@@ -90,4 +90,4 @@ we had some errors in implementing timestamps. After checking, we found that is 
 the format of input for users can be checked to right ISO format 
 2. Order the result
 the result is not order by its score
-this algorithm can also be implemented by another 
+this algorithm can also be implemented by another map-reduce process ....
