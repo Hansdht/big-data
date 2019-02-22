@@ -2,8 +2,7 @@
 
 Big data coursework 1
 ===================
-This is the coursework of bigdata in university of Glasgow, the 
-the main purpose of this task is to implement a watered-down version of PageRank algorithm which can calculate the score for each link in records.
+This is the coursework of bigdata in university of Glasgow,  the main purpose of this task is to implement a watered-down version of PageRank algorithm which can calculate the score for each link in records.
 Our solution contains Initialization map-reduce and PageRank map-reduce. 
 The whole algorithm has several classes
 
@@ -70,12 +69,12 @@ need to calculate their score. The
 
 
 
-iteration
+# iteration
 the Pagerank mapreduce process need to iterated for several times to converge the score. 
 
 
 
-final output:<title, pagerank score>
+# final output:<title, pagerank score>
 the final output format has given
 
 | key | value |
