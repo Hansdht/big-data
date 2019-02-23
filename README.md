@@ -18,8 +18,8 @@ There are three files in this step:
 2.MyInputFormat: change the scaning format so that the whole record can be scanned rather than a single line.
 3. MyRecordReader
 4. utils.ISO8601: transform the format for timestamp 
-In this process, we set the doucument as input, then find all the title and its timestamp and outlinks. After that the 
-...
+In this process, we set the doucument as input, then find all the title and its timestamp and outlinks. After that the key/value pairs are sent to reducer, where the timestamp will be compaired to get the latest version. Finally the timestamp will be replaced by 1 for pagerank score calculation.
+
 
 
 Initialization-map
@@ -55,7 +55,7 @@ the purpose of maping step is to compute all the score for each record.
 it can shows all the score in that record for each outlink and all the outlinks it has
 the example of output in mapping is <B @0.15> <C @0.15> <D @0.15> <A &B C D>
 
-after suffle, the pairs can be combined, for example A <&B C D, @0.15>
+after shuffle, the pairs can be combined, for example A <&B C D, @0.15>
 
 PageRank-reduce 
 in this step, all the score for a link will be calculated 
@@ -89,4 +89,4 @@ we had some errors in implementing timestamps. After checking, we found that is 
 the format of input for users can be checked to right ISO format 
 2. Order the result
 the result is not order by its score
-this algorithm can also be implemented by another map-reduce process ....
+this algorithm can also be implemented by another map-reduce process which can sort the articles by its score. In the map part, we need to exchange the key and its value, then sort it in reduce part.
