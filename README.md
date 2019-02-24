@@ -45,27 +45,24 @@ the output format of this process has given below
 
 
 # PageRank
-The class it contains are ...
+The class of pagerank algorithm contains a map-reduce process and iteration part.
 The score can be expressed to: PR=(1-damping factor)+damping factors*sum(PR/number of outlinks)
 In the pagerank step, the rank score can be calculated for each link. We also set a loop to converge the score. 
 eg. the input format is <A 1 B C D>
 
 PageRank-map 
 the purpose of maping step is to compute all the score for each record. 
-it can shows all the score in that record for each outlink and all the outlinks it has
-the example of output in mapping is <B @0.15> <C @0.15> <D @0.15> <A &B C D>
-
+it can shows all the score in that record for each outlink and all the outlinks it has. the example of output in mapping is <B @0.15> <C @0.15> <D @0.15> <A &B C D>
 after shuffle, the pairs can be combined, for example A <&B C D, @0.15>
 
 PageRank-reduce 
 in this step, all the score for a link will be calculated 
+firstly, setting a loop for all the values for same key.
 if the value contains "@" then parse the String into float and calculate
 if the value contains "&" then extract the String below
 the output of this step is the title of the link(key) and its pagerank score, followed by all its outlinks(value).
 
-tips: we need to consider the link which do not have any record. these link are only appears in outlink.We also 
-
-need to calculate their score. The 
+tips: we need to consider the link which do not have any record. these link are only appears in outlink. The timestamp of these outlinks are considered to be the latest version and their score are also need to be calculated.
 
 
 
