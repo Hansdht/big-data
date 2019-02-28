@@ -11,6 +11,11 @@ The whole process can be divided into three steps: Initialization, PageRank, Tra
 For using, please type:  hadoop path/to/input/file path/to/output/file iteration(times) time(In ISO8601 format) 
 
 
+# MyInputFormat
+
+# MyRecordReader
+
+
 # Initialization
 This step was implemented to process the get the record titles, timestamps and all the outlinks
 There are three files in this step:
@@ -52,8 +57,12 @@ eg. the input format is <A 1 B C D>
 
 PageRank-map 
 the purpose of maping step is to compute all the score for each record. 
-it can shows all the score in that record for each outlink and all the outlinks it has. the example of output in mapping is <B @0.15> <C @0.15> <D @0.15> <A &B C D>
+it can shows all the score in that record for each outlink and all the outlinks it has.
+if it is out link, we add a "@" befor the score
+if it is title, we add a "&" then we add all the outlink it has
+the example of output in mapping is <B @0.15> <C @0.15> <D @0.15> <A &B C D>
 after shuffle, the pairs can be combined, for example A <&B C D, @0.15>
+
 
 PageRank-reduce 
 in this step, all the score for a link will be calculated 
