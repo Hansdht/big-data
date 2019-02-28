@@ -12,9 +12,10 @@ For using, please type:  hadoop path/to/input/file path/to/output/file iteration
 
 
 # MyInputFormat
-
+this is the function which can set the amount of innput for initialization. we need the input processed as record by record.
+this function utilize the class "myrecordreader"
 # MyRecordReader
-
+in this part, we can process the file record-by-record. 
 
 # Initialization
 This step was implemented to process the get the record titles, timestamps and all the outlinks
@@ -61,7 +62,8 @@ it can shows all the score in that record for each outlink and all the outlinks 
 if it is out link, we add a "@" befor the score
 if it is title, we add a "&" then we add all the outlink it has
 the example of output in mapping is <B @0.15> <C @0.15> <D @0.15> <A &B C D>
-after shuffle, the pairs can be combined, for example A <&B C D, @0.15>
+
+after shuffle, the pairs can be combined, for example A <@0.15>  A<&B C D > then send to the reduce part
 
 
 PageRank-reduce 
