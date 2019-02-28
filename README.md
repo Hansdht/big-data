@@ -93,8 +93,10 @@ the final output format has given
 # existing problem and future work
 for further prospect, there are some improvement in this method
 1.input check
-we had some errors in implementing timestamps. After checking, we found that is the format of data eg.    ....
-the format of input for users can be checked to right ISO format 
+we had some errors in implementing timestamps. After checking, we found that is the format of data eg. 2013-9-12T13:50:00z
+we miss a 0 before the date 9
+it might bepossible that the user could input the invalid format for time
+bu using this function, the format of input for users can be checked to right ISO format 
 2. Order the result
 the result is not order by its score
 this algorithm can also be implemented by another map-reduce process which can sort the articles by its score. In the map part, we need to exchange the key and its value, then sort it in reduce part.
