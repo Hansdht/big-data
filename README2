@@ -1,0 +1,31 @@
+this is the second accessed coursework for Big Data
+
+
+The whole process can be divided into two parts
+
+
+Be different with the first coursework, in this part we did not use the setinputformat class, we used the "sc.hadoopConfiguration().set("textinputformat.record.delimiter", "\n\n");" to seperate all the records
+firstly we extracted all the titles, its timestamps and outlinks. Then we filtered all the invalid timestamps and the timestamps which are later than input time. 
+
+In the reduce by key part the latest ver
+
+In the score calculation part, we firstly adding 
+
+
+
+
+
+
+
+Timestamp: in this part we also need to take out the record with the invalid timestamp.
+however, in this part the time filtering needs to be put in the map part as the record only have one revision cannot be transported in the comparision process. In the reduce part we can compair all the time bafore inputtime and find the latest version.
+
+it is also worth mentioning that if we used * to seperate the title the system will fall when input the time in the year of 2008. However if we used 2004 it will work. The reason might be there is a "*" in the title for articles from 2004 to 2008. So we changed the separator into "*&" 
+
+sort
+the score of each output file needs to be sorted. In the first exercise, we knew that the result of the mapreduce are sorted in alphabetical order by its key in each reducer. In this case, we can exchange the key and its value by using"x->x.swap". Then we can sort them by using ".sortByKey(false)" the false means decending. After that we can swap back the pairs and output.
+
+
+error:
+there were some errors when comparing the two timestamps. If there were invalid timestamp in the map part then it will crash.
+
